@@ -1,0 +1,513 @@
+/* The Whole Settings */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+    --footer-bg: #e6e6e6;
+    --footer-text: #333333;
+    --border-color: #c3c3c3; /* 分隔線顏色 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Noto Sans TC", sans-serif;
+    font-style: normal;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.24s;
+}
+
+ul { list-style: none; }
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 60px; /*picture radius*/
+}
+
+/* container & margin/padding */
+main{
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 12px 0 12px;
+}
+
+.nav-container {
+    max-width: 1920px;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding: 0 12px 0 12px;
+}
+
+/* 分隔線 */
+.divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 60px 0;
+}
+
+/* navigation */
+.navbar {
+    background-color: var(--bg-color);
+    padding: 6px 12px 6px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #fff;
+}
+
+.navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    width: 16vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: inline-flex;
+    gap: 96px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+/*搜尋列*/
+.search-form {
+    display: flex;
+    margin-top: 6px;
+    border: 1px solid #999;
+    border-radius: 120px;
+    overflow: hidden;
+    width: 240px;
+    height: auto;
+}
+
+.search-form input {
+    border: none;
+    background: transparent;
+    padding: 6px 6px 6px 6px;
+    flex: 1;
+    outline: none;
+}
+
+.search-form button {
+    background: transparent;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ffffff
+}
+
+.search-form button:hover {
+    border: #fffce1;
+    background: #fffce1;
+    color:#000000
+}
+
+
+/* Hero section aka. Title */
+.hero-section {
+    text-align: center;
+    padding: 100px 0 60px;
+}
+
+.hero-section:hover {
+    cursor: pointer;
+    background-image: url(../img/SynVisual_logo_2.png);
+}
+
+.main-title {
+    font-size: 300px;
+    font-weight: 720;
+    margin-bottom: 72px;
+    letter-spacing: 30px;
+}
+
+.sub-title {
+    font-size: 84px;
+    font-weight: 700;
+    opacity: 0.96;
+}
+
+/* Quote section aka. SubTitle */
+.quote-section {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px 0 12px;
+}
+
+.quote-en, .quote-zh {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.quote-en p:hover {
+    cursor: pointer;
+    font-style: oblique;
+    color: #00e6e6
+}
+
+.quote-zh p:hover {
+    cursor: pointer;
+    font-style: oblique;
+    color: #ff8709;
+}
+
+.quote-en p {
+    font-size: 72px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.quote-zh p {
+    font-size: 72px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+cite {
+    font-style: italic;
+    font-size: 16px;
+    color: #c3c3c3;
+    display: block;
+    margin-top: 30px;
+    text-align: right;
+}
+
+/*  Content (Split) */
+.content-split {
+    display: flex;
+    align-items: flex-start; /* 靠上對齊 */
+    gap: 240px;
+    margin-bottom: 80px;
+}
+
+.text-col {
+    flex: 1;
+    padding-top: 20px; /* 讓文字稍微往下 */
+}
+
+.img-col {
+    flex: 1;
+    text-align: center;
+}
+
+.neuro-synes {
+    width: 480px;
+    height: auto;
+}
+
+/*康丁斯基照片*/
+.portrait {
+    width: 480px;
+    height: auto;
+}
+
+.reverse-layout {
+    flex-direction: row;
+}
+
+.reverse-layout .text-col {
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.content-split h3 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #d9d9d9; /* 標題底線 */
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.content-split p {
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.img-caption {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+    text-align-last: right;
+}
+
+/* Button */
+.btn {
+    display: inline-flex;
+    padding: 12px 30px;
+    border-radius: 120px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fffce1;
+    border-color: #fffce1;
+    color: #000;
+}
+
+
+
+/* Classical Gallery (Showcase) */
+.showcase-section {
+    text-align: start;
+    margin: 80px 0;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.horiz-gallery-strip,
+.horiz-gallery-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  position: relative;
+}
+
+.project-wrap {
+  width: 12vw;
+  padding: 60px 15px 30px 15px;
+  box-sizing: content-box;
+  opacity: 0.6;
+}
+
+.project-wrap:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.project-wrap img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.showcase-section h3 {
+    font-size: 64px;
+    text-align: left;
+}
+
+.panel-plain p {
+    font-size: 10px;
+}
+
+.project-wrap .work-name {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 6px;
+}
+
+.project-wrap .work-name-author {
+    font-size: 9px;
+    text-align: center;
+}
+
+
+
+
+/* FAQs */
+.faq-section {
+    margin-bottom: 120px;
+}
+
+.faq-section h3 {
+    font-size: 64px;
+    margin-bottom: 60px;
+}
+
+.faq-list li {
+    padding: 24px 0;
+    border-bottom: 1px solid #333333;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.faq-list li:first-child {
+    border-top: 1px solid #333333;
+}
+
+.faq-list li:hover {
+    opacity: 0.72;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 60px 0 30px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.footer-contact h4, .newsletter h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.footer-contact p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.footer-contact .small-text {
+    font-size: 12px;
+    color: #666666;
+}
+
+.newsletter {
+    margin-top: 42px;
+}
+
+.email-form {
+    display: flex;
+    margin-top: 15px;
+    border: 1px solid #999;
+    border-radius: 120px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.email-form input {
+    border: none;
+    background: transparent;
+    padding: 10px 15px;
+    flex: 1;
+    outline: none;
+}
+
+.email-form button {
+    background: transparent;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.footer-social {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-logo {
+    display: flex;
+    width: 24vw;
+    height: auto;
+    cursor: pointer;
+    margin: 60px 6px 30px 6px
+}
+
+
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+    width: 24vw;
+    height: auto;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.footer-policy a {
+    color: #666;
+    margin: 0 6px;
+}
+
+
+
+/* 手機版 */
+@media (max-width: 800px) {
+    .main-title { font-size: 3rem; }
+    .sub-title { font-size: 1.5rem; }
+    .nav-links { font-size: 12px; }
+    
+    .content-split, .reverse-layout {
+        flex-direction: column;
+    }
+
+    .reverse-layout .text-col {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .navbar .nav-links { display: none; } /* 手機版--隱藏選單 */
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-social {
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .social-icons { justify-content: flex-start; }
+}
