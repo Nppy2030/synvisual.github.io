@@ -37,8 +37,8 @@
     <main>
         <!--Title-->
         <section class="hero-section">
-            <h1 class="main-title">聯覺</h1>
-            <h2 class="sub-title">什麼是視覺藝術中的聯覺？</h2>
+            <h1 class="main-title parallax-layer" data-speed="2">聯 覺</h1>
+            <h2 class="sub-title parallax-layer" data-speed="4">什麼是視覺藝術中的聯覺？</h2>
         </section>
         <!--Title end-->
 
@@ -47,13 +47,13 @@
         <!--SubTitle-->
         <section class="quote-section">
             <div class="quote-en">
-                <p>I saw all my colors in my mind; they stood before my eyes.<br>
-                Wild, almost crazy lines were sketched in front of me......</p>
-                <cite>— Wassily Kandinsky, Concerning The Spiritual in Art, 1911</cite>
+                <p class="split-text">I saw all my colors in my mind; <br>they stood before my eyes.<br>
+                Wild, almost crazy lines<br> were sketched<br> in front of me......</p>
+                <cite class="split-text">— Wassily Kandinsky, Concerning The Spiritual in Art, 1911</cite>
             </div>
             <div class="quote-zh">
-                <p>我的腦中浮現所有色彩；<br>它們就佇立在我眼前。<br>那狂野，又近乎猖狂的線條，<br>在我面前勾勒出來......</p>
-                <cite>— 瓦西里·康丁斯基《藝術中的精神》(1911)</cite>
+                <p class="split-text">我的腦中浮現所有色彩；<br>它們就佇立在我眼前。<br>那狂野，又近乎猖狂的線條，<br>在我面前勾勒出來......</p>
+                <cite class="split-text">— 瓦西里·康丁斯基《藝術中的精神》(1911)</cite>
             </div>
         </section>
         <!--SubTitle-->
@@ -66,7 +66,9 @@
             <div class="text-col">
                 <h3>神經科學中的聯覺</h3>
                 <p>聯覺是一種非病理性的神經科學現象，是指當一種感官受到刺激時，會自動、非自願地引發另一種或多種感官同時反應。例如，聯覺患者可能會「聽」到顏色、「看」到聲音或「感覺」到味道......</p>
-                <a href="#" class="btn btn-outline">探索更多 ↗</a>
+                <a href="#" class="btn btn-outline">
+                    <span class="btn-text">探索更多 ↗</span>
+                </a>
             </div>
             <div class="img-col">
                 <img src="./img/neurological synesthesia.png" alt="神經科學聯覺示意圖" class="neuro-synes">
@@ -79,7 +81,9 @@
             <div class="text-col">
                 <h3>藝術/設計中的聯覺</h3>
                 <p>此概念指的是藝術應用中感官的融合。天生具有聯覺的藝術家們利用自己體驗到的感受，以「藝術形式」轉譯出來，例如在聆聽音樂時所看到的色彩；反之，非聯覺者將聲音、視覺和情感連接起來創作作品，以喚起觀者對這種感受的體驗......</p>
-                <a href="#" class="btn btn-outline">探索更多 ↗</a>
+                <a href="#" class="btn btn-outline">
+                    <span class="btn-text">探索更多 ↗</span>
+                </a>
             </div>
             <div class="img-col">
                 <img src="./img/Wassily Kandinsky.jpg" alt="瓦西里康丁斯基照片" class="portrait">
@@ -146,24 +150,28 @@
         <!--Content 3-->
         <!--平面設計-->
         <section class="content-split reverse-layout">
-            <div class="img-col wide-img">
+            <div class="img-col Azam-img">
                 <img src="./img/azam ali - synesthesiajpg.jpg" alt="平面設計應用">
                 <span class="img-caption">來源: One of Cover Images for Azam Ali's Song "Synesthesia" </span>
             </div>
             <div class="text-col">
                 <p>不論是否天生具有聯覺，當代許多設計師、藝術家和康丁斯基一樣，熱衷於探討將這個概念應用於平面設計中。</p>
-                <a href="#" class="btn btn-outline">探索 平面設計</a>
+                <a href="#" class="btn btn-outline">
+                    <span class="btn-text">探索 平面設計</span>
+                </a>
             </div>
         </section>
         <!--新媒體藝術-->
         <section class="content-split reverse-layout">
-            <div class="img-col wide-img">
+            <div class="img-col wive-img">
                 <img src="./img/creative coding with synesthesia.gif" alt="新媒體藝術">
                 <span class="img-caption">來源: Synesthesia - Live Music Visualizer - VJ Software </span>
             </div>
             <div class="text-col">
                 <p>作為當代藝術趨勢的新媒體藝術，該領域的設計師與藝術家們仍不斷探討將聯覺概念融入擴增實境、虛擬實境、虛擬製片以及創意編碼等作品中，並使作品更具啟發的意味。</p>
-                <a href="#" class="btn btn-outline">探索 新媒體藝術</a>
+                <a href="#" class="btn btn-outline">
+                    <span class="btn-text">探索 新媒體藝術</span>
+                </a>
             </div>
         </section>
         <!--Content 3 end-->
@@ -224,6 +232,14 @@
         </div>
     </footer>
    <!--Footer end-->
+
+<!--JavaScript-->
+<!--gsap intro-->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<!--gsap SCROLLTRIGGER intro-->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<!--JS-->
+<script src="./js/gsap.js"></script>
 
 </body>
 </html>

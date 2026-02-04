@@ -139,11 +139,12 @@ main{
 .hero-section {
     text-align: center;
     padding: 100px 0 60px;
+    background-image: url(../img/Synesthesia_聯覺_hero-section背景_85.png);
+    background-size: cover;
 }
 
 .hero-section:hover {
     cursor: pointer;
-    background-image: url(../img/SynVisual_logo_2.png);
 }
 
 .main-title {
@@ -159,6 +160,16 @@ main{
     opacity: 0.96;
 }
 
+.hero-section {
+    perspective: 1200px; /* 增加首頁的 3D 透視深度 */
+    overflow: hidden;    /* 防止元素晃動時出現捲軸 */
+}
+
+.main-title, .sub-title {
+    transform-style: preserve-3d;
+    backface-visibility: hidden; /* 讓動畫更流暢 */
+}
+
 /* Quote section aka. SubTitle */
 .quote-section {
     text-align: center;
@@ -172,17 +183,6 @@ main{
     margin-bottom: 120px;
 }
 
-.quote-en p:hover {
-    cursor: pointer;
-    font-style: oblique;
-    color: #00e6e6
-}
-
-.quote-zh p:hover {
-    cursor: pointer;
-    font-style: oblique;
-    color: #ff8709;
-}
 
 .quote-en p {
     font-size: 72px;
@@ -196,6 +196,11 @@ main{
     font-weight: 500;
     margin-bottom: 10px;
     line-height: 1.2;
+}
+
+/*.quote-zh*/.split-text span {
+    white-space: pre; /* 確保空白字元也能正確顯示 */
+    will-change: transform, opacity; /* 提升動畫效能 */
 }
 
 cite {
@@ -280,14 +285,25 @@ cite {
 }
 
 .btn-outline {
-    border: 1px solid #fff;
-    color: #fff;
+    position: relative;
+    overflow: hidden; /* 確保內層揭幕不會超出按鈕 */
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    z-index: 1;
 }
 
-.btn-outline:hover {
+/* 這是那個負責「揭幕」的背景層 */
+.btn-fill-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #fffce1;
-    border-color: #fffce1;
-    color: #000;
+    z-index: -1; /* 放在文字下方 */
+    transform: translate(-100%, 0); /* 預設躲在左邊，JS會動態改變它 */
+    border-radius: 120px;
 }
 
 
