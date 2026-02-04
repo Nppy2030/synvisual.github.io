@@ -37,6 +37,27 @@ img {
     border-radius: 60px; /*picture radius*/
 }
 
+/*以下為 滑鼠指標產生光跡 的CSS設定*/
+#trail-canvas {
+    /* 關鍵 1：設定為 fixed 或 absolute，這樣它就不會擠壓到導覽列 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    
+    /* 關鍵 2：讓它填滿整個螢幕 */
+    width: 100vw;
+    height: 100vh;
+    
+    /* 關鍵 3：這行非常重要！確保你可以點擊到下方的導覽列按鈕 */
+    pointer-events: none; 
+    
+    /* 關鍵 4：把它疊在最上面 */
+    z-index: 9999;
+    
+    /* 初始背景必須透明 */
+    background: transparent;
+}
+
 /* container & margin/padding */
 main{
     max-width: 1200px;

@@ -157,8 +157,9 @@ window.addEventListener("load", () => {
     console.log("所有互動功能已成功綁定！");
 });
 
+//----------------------------------
 // 以下為視差效果
-
+//-----------------------------------
 // 監聽滑鼠移動
 window.addEventListener("mousemove", (e) => {
     const mouseX = e.clientX;
@@ -261,3 +262,83 @@ splitTargets.forEach((target) => {
         ease: "power3.out"
     });
 });
+
+
+//----------------------------------
+// 以下為特殊效果
+//-----------------------------------
+// 滑鼠滑動有光粒子效果拖曳
+const canvas = document.getElementById('trail-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+// 定義康丁斯基彩虹色庫 (也可使用您之前的 rainbowPalette)
+const trailColors = ["#F100CB", "#FF8709", "#FFFCE1", "#0AE448", "#00BAE2", "#9D95FF"];
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class Particle {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.size = Math.random() * 4 + 2; // 隨機大小
+        this.speedX = Math.random() * 2 - 1; // 隨機水平漂移
+        this.speedY = Math.random() * 2 - 1; // 隨機垂直漂移
+        this.opacity = 1;
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.02; // 粒子逐漸消失
+        if (this.size > 0.1) this.size -= 0.05; // 粒子逐漸變小
+    }
+
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        // 加入發光效果
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = this.color;
+    }
+}
+
+function handleParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        
+        // 移除看不見的粒子
+        if (particles[i].opacity <= 0) {
+            particles.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+window.addEventListener('mousemove', (e) => {
+    // 每次移動產生 3 個不同顏色的粒子
+    for (let i = 0; i < 3; i++) {
+        const color = trailColors[Math.floor(Math.random() * trailColors.length)];
+        particles.push(new Particle(e.clientX, e.clientY, color));
+    }
+});
+
+function animate() {
+    // 每一幀都稍微清除畫布，製造出「拖尾」感
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    handleParticles();
+    requestAnimationFrame(animate);
+}
+
+animate();
